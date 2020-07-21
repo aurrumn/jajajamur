@@ -8,7 +8,7 @@ class m_login extends CI_Model {
         parent::__construct();
     }
 
-    // mengecek apakah user terdaftar dalam database
+    // mengecek apakah user terdaftar dalam db
     function cekExistensiUsername($table, $where) {
         $this->db->from($table);
         $this->db->where($where);
