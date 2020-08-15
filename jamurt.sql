@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jul 2020 pada 08.22
+-- Waktu pembuatan: 16 Agu 2020 pada 00.08
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -44,6 +44,16 @@ CREATE TABLE `gender` (
   `id_gender` int(1) NOT NULL,
   `keterangan` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `gender`
+--
+
+INSERT INTO `gender` (`id_gender`, `keterangan`) VALUES
+(1, 'Laki'),
+(2, 'Puan'),
+(3, 'Laki'),
+(4, 'Puan');
 
 -- --------------------------------------------------------
 
@@ -283,7 +293,7 @@ ALTER TABLE `detail_periksa`
 -- AUTO_INCREMENT untuk tabel `gender`
 --
 ALTER TABLE `gender`
-  MODIFY `id_gender` int(1) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gender` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jamur`
