@@ -8,7 +8,7 @@ class Admin extends CI_Model {
         parent::__construct();
     }
 
-    function insert($table = '', $data = '') {
+    function insert($table, $data) {
         $this->db->insert($table, $data);
     }
 

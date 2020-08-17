@@ -6,6 +6,8 @@ class c_login extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->library(array('template', 'form_validation', 'session', 'encryption'));
+        $this->load->helper(array('form', 'url'));
         $this->load->model('m_login');
     }
 
@@ -18,6 +20,12 @@ class c_login extends CI_Controller {
     }
 
     function masuksistem() {
+        $username = $this->input->post('username');
+        $pass = $this->input->post('password');
+        echo 'WELCOME OWNER'.$username.$pass;
+    }
+
+    function masuksistem2() {
         // menghapus pesan peringatan
         $this->hapusPesanPeringatan();
 
@@ -51,8 +59,7 @@ class c_login extends CI_Controller {
                     // mengecek level akses user yang login
                     if ($this->m_login->deteksiLevelAkses($username, $pass) == 1) {
                         // jika yang login itu BOS
-                        redirect(base_url() . 'controller_juragan/c_juragan_petani');
-
+//                        redirect(base_url() . 'controller_juragan/c_juragan_petani');
                     } else {
                         // jika yang login pegawai
                         redirect(base_url() . 'controller_pegawai/c_pegawai_data_diri');
